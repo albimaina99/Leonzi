@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 4750 3100 1    60   ~ 0
+Text Label 4750 3950 1    60   ~ 0
 Vin
 Text Label 5150 3100 1    60   ~ 0
 IOREF
@@ -160,15 +160,9 @@ Wire Wire Line
 	5200 3850 5100 3850
 Connection ~ 5100 3850
 Wire Wire Line
-	4750 3950 4750 3100
-Wire Wire Line
-	4850 3650 4850 3000
+	4850 3650 4850 3150
 Wire Wire Line
 	4950 3550 4950 3100
-Wire Wire Line
-	5200 4150 4700 4150
-Wire Wire Line
-	5200 4250 4700 4250
 Wire Wire Line
 	5200 4350 4700 4350
 Wire Wire Line
@@ -213,7 +207,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 3750 5100 3850
 Wire Wire Line
-	5100 3850 5100 4800
+	5100 3850 5100 4750
 Wire Wire Line
 	5200 3450 4450 3450
 Text Notes 5500 3250 0    60   ~ 0
@@ -469,8 +463,6 @@ F 3 "~" H 7250 2550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6000 3550 6700 3550
-Wire Wire Line
 	8000 2900 8400 2900
 Wire Wire Line
 	7100 2550 6550 2550
@@ -479,7 +471,38 @@ Wire Wire Line
 Wire Wire Line
 	6000 3450 6550 3450
 Wire Wire Line
-	6550 3550 6350 3550
-Wire Wire Line
 	7400 2550 7600 2550
+Wire Wire Line
+	6000 3550 6700 3550
+$Comp
+L Device:R_POT RV?
+U 1 1 5C86709E
+P 4050 3900
+F 0 "RV?" H 3980 3946 50  0000 R CNN
+F 1 "R_POT" H 3980 3855 50  0000 R CNN
+F 2 "" H 4050 3900 50  0001 C CNN
+F 3 "~" H 4050 3900 50  0001 C CNN
+	1    4050 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4150 4700 4150
+Wire Wire Line
+	4050 3750 4050 3150
+Wire Wire Line
+	4050 3150 4850 3150
+Connection ~ 4850 3150
+Wire Wire Line
+	4850 3150 4850 3000
+Wire Wire Line
+	4200 3900 4200 4250
+Wire Wire Line
+	4200 4250 5200 4250
+Wire Wire Line
+	4050 4050 4050 4750
+Wire Wire Line
+	4050 4750 5100 4750
+Connection ~ 5100 4750
+Wire Wire Line
+	5100 4750 5100 4800
 $EndSCHEMATC

@@ -7,6 +7,8 @@ DHT dht(DHTPIN, DHTTYPE);
 UltraSonicDistanceSensor distanceSensor(8, 9);  // TRIGGER, ECHO
 
 unsigned long last_now = 0;
+
+
 int delta = 1000;
 
 
@@ -14,11 +16,14 @@ int ledRed1 = 4;
 int ledRed2 = 3;
 int ledGreen = 2;
 
+
 int button = 12;
 
 
-void setup() {
+int last_state = 0;
 
+
+void setup() {
 
   Serial.begin(9600);
   Serial.println("TIME, PROSSIMITY, TEMPERATURE, RELATIVE HUMIDITY");
@@ -45,4 +50,26 @@ void loop() {
     Serial.print(h);
     Serial.println("%");
   }
+  if (t > 30) {
+    digitalWrite(ledRed1, HIGH);
+  }
+  if (h < 50) {
+    digitalWrite(ledRed2, HIGH);
+  }
+  int state = digitalRead(button);
+  if (state == 1 && last_state != state) {
+    digitalWrite(ledRed1, LOW);
+    digitalWrite(ledRed1, LOW);
+  }
+  last_state = state;
 }
+
+
+
+
+
+
+
+
+
+
